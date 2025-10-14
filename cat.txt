@@ -1,0 +1,18 @@
+masuk_barang
+- kode_barang
+- jumlah_masuk
+- tanggal_masuk
+
+keluar_barang
+- kode_barang
+- nama_penerima
+- id_penerima
+- jumlah_keluar
+- tanggal_keluar
+
+stok_barang
+- nama_barang
+- kode_barang
+- stok
+
+
