@@ -11,8 +11,8 @@ keluar_barang
 - tanggal_keluar
 
 stok_barang
-- nama_barang
 - kode_barang
-- stok
+- nama_barang
+- stok -0
 
 
