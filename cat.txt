@@ -1,7 +1,8 @@
-masuk_barang
+//masuk_barang
 - kode_barang
 - jumlah_masuk
 - tanggal_masuk
+- author
 
 keluar_barang
 - kode_barang
@@ -9,6 +10,7 @@ keluar_barang
 - id_penerima
 - jumlah_keluar
 - tanggal_keluar
+- author
 
 stok_barang
 - kode_barang

@@ -11,6 +11,7 @@ class StokBarang extends Model
     protected $fillable = [
         'kode_barang',
         'nama_barang',
+        'satuan',
         'jumlah_stok',
     ];
 }

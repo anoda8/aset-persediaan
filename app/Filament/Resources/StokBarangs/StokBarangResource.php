@@ -22,6 +22,8 @@ class StokBarangResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Stok Barang';
 
+    protected static ?string $navigationLabel = 'Stok Barang';
+
     public static function form(Schema $schema): Schema
     {
         return StokBarangForm::configure($schema);
@@ -43,8 +45,8 @@ class StokBarangResource extends Resource
     {
         return [
             'index' => ListStokBarangs::route('/'),
-            'create' => CreateStokBarang::route('/create'),
-            'edit' => EditStokBarang::route('/{record}/edit'),
+            // 'create' => CreateStokBarang::route('/create'),
+            // 'edit' => EditStokBarang::route('/{record}/edit'),
         ];
     }
 }
