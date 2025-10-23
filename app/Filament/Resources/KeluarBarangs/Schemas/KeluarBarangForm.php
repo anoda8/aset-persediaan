@@ -2,7 +2,10 @@
 
 namespace App\Filament\Resources\KeluarBarangs\Schemas;
 
+use App\Models\PenerimaBarang;
+use App\Models\StokBarang;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,19 +15,21 @@ class KeluarBarangForm
     {
         return $schema
             ->components([
-                TextInput::make('kode_barang')
+                Select::make('kode_barang')->label('Barang')
+                    ->options(StokBarang::all()->pluck('nama_barang', 'kode_barang'))
+                    ->searchable()
                     ->required(),
                 TextInput::make('jumlah_keluar')
                     ->required()
                     ->numeric(),
-                DatePicker::make('tanggal_keluar')
+                DatePicker::make('tanggal_keluar')->default(now())
                     ->required(),
-                TextInput::make('id_penerima')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('author')
-                    ->required()
-                    ->numeric(),
+                 Select::make('id_penerima')->label('Penerima')
+                    ->options(PenerimaBarang::all()->pluck('nama', 'nip'))
+                    ->searchable()
+                    ->required(),
+                TextInput::make('author')->default(auth()->user()->id)->disabled()
+                    ->required(),
             ]);
     }
 }

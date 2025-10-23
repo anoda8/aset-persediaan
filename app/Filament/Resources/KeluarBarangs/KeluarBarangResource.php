@@ -24,6 +24,8 @@ class KeluarBarangResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Keluar Barang';
 
+    protected static ?string $navigationLabel = 'Barang Keluar';
+
     public static function form(Schema $schema): Schema
     {
         return KeluarBarangForm::configure($schema);
